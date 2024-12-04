@@ -1,0 +1,58 @@
+.Post{
+    
+    background-color: white;
+    width: 597px;
+    height: 958px;
+    border-radius: 10px;
+    font-weight: 600;
+    
+}
+
+.postInfo{
+    margin-left: 10px;
+}
+
+.Post img{
+    
+    width: 597px;
+    height: 665px;
+    
+}
+
+
+.likeBut img{
+    width: 63px;
+    height: 63px;
+    
+}
+.saveBut img{
+    width: 75px;
+    height: 75px;
+    
+}
+
+.likeBut{
+    background-color: transparent;
+    border: none;
+}
+.saveBut{
+    background-color: transparent;
+    border: none;
+}
+
+.likeAndSaveBut{
+    display: flex;
+    justify-content: space-between;
+}
+
+.likesText{
+    font-size: 24px;
+}
+
+.nameText{
+    font-size: 36px;
+}
+
+.descText{
+    font-size: 24px;
+}
