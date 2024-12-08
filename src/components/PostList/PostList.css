@@ -15,3 +15,33 @@
     font-size: 96px;
     color: #44174E;
 }
+
+select {
+    width: 300px;
+    height: 70px;
+    padding: 10px;
+    font-size: 32px;
+    text-align: center;
+    background-color: #e57373; 
+    color: #fff; 
+    border: 2px solid #b71c1c;
+    border-radius: 5px;
+    cursor: pointer;
+    outline: none;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+select:hover {
+    background-color: #ef5350;
+}
+
+
+select:focus {
+    box-shadow: 0 0 10px rgba(239, 83, 80, 0.8);
+}
+
+option {
+    font-size: 14px;
+    background-color: #fff; 
+    color: #333; 
+}
