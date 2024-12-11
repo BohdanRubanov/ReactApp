@@ -1,11 +1,12 @@
+import { Link } from "react-router-dom"
 import "./Header.css"
 
 export function Header(){
     return( 
         <div className="header"> 
             <div className="blockLinks1">
-                <a className='link' href=''>Home</a>
-                <a className='link' href=''>Posts</a>
+                <Link className='link' to={'/'}>Home</Link>
+                <Link className='link' to={'/posts'}>Posts</Link>
                 <a className='link' href=''>Search</a>
             </div>
             <div className="blockLinks2">

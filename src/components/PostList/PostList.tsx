@@ -25,6 +25,15 @@ export function PostList(){
         console.log(selectedCategory)
     }, [selectedCategory])
 
+    useEffect(()=>{
+        async function getPosts(){
+            const response = await fetch('https://fakestoreapi.com/products')
+            const products = await response.json()
+            setFilteredPosts(products)
+        }
+        getPosts()
+    },[])
+
     return <div className="PostList">
         <h1 className="PostsTitle">Posts</h1>
         <select onChange={(event)=>{
