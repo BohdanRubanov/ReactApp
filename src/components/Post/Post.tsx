@@ -1,7 +1,9 @@
 import { useState } from "react"
 import "./Post.css"
+import { Link } from "react-router-dom";
 
 interface IPostProps {
+    id: number,
     name: string,
     description: string,
     img: string,
@@ -26,6 +28,7 @@ export function Post(props:IPostProps){
     }
     return (
         <div className="Post">
+            <Link to={"/post/"+props.id}>
             <img src={props.img} alt="" />
             <div className="postInfo">
                 <div className="likeAndSaveBut">
@@ -36,10 +39,11 @@ export function Post(props:IPostProps){
                 <p className="likesText">Likes: {likes}</p>
                 <h1 className="nameText">{props.name}</h1>
                 <p className="descText">{props.description}</p> 
+            
             </div>
             
             
-            
+        </Link>
         </div>
     )
 }

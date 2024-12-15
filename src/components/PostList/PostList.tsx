@@ -50,7 +50,7 @@ export function PostList(){
             {filteredPosts.map( (post) => {
     
                 
-                return <Post key = {post.id} name = {post.name} description = {post.description} img = {post.image} author={post.author}></Post>
+                return <Post key = {post.id} id = {post.id} name = {post.name} description = {post.description} img = {post.image} author={post.author}></Post>
             }
             )}
     </div>
