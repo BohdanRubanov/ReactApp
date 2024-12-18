@@ -1,7 +1,7 @@
 import { Outlet } from "react-router-dom";
-import { Header } from "../Header/Header";
-import { MainFrame } from "../MainFrame/MainFrame";
-import { PostList } from "../PostList/PostList";
+import { Header } from "../pages/Header/Header";
+import { MainFrame } from "../pages/MainPage/MainPage";
+import { PostList } from "../shared/PostList/PostList";
 import { ReactNode } from "react";
 
 

@@ -1,16 +1,10 @@
 import { useEffect, useState } from "react"
 import { Post } from "../Post/Post"
 import "./PostList.css"
+import { usePosts } from "../../hooks/usePosts"
 
 export function PostList(){
-    const posts = [
-        {id: 0, category: 'funny', name: 'Oleg', description: "funny", image: "/static/img/catPost.png", author: "me"},
-        {id: 1, category: 'sad',name: 'NeOleg', description: "sad", image: "/static/img/catPost.png", author: "me"},
-        {id: 2, category: 'angry',name: 'NeOleg', description: "angry", image: "/static/img/catPost.png", author: "me"},
-        {id: 3, category: 'hapi',name: 'NeOleg', description: "hapi", image: "/static/img/catPost.png", author: "me"},
-        {id: 4, category: 'funny',name: 'NeOleg', description: "funny", image: "/static/img/catPost.png", author: "me"},
-       
-    ]
+    const {posts} = usePosts()
     const [filteredPosts, setFilteredPosts] = useState(posts)
     const [selectedCategory, setSelectedCategory] = useState('All')
 
@@ -23,16 +17,9 @@ export function PostList(){
             }))
         }
         console.log(selectedCategory)
-    }, [selectedCategory])
+    }, [selectedCategory, posts])
 
-    useEffect(()=>{
-        async function getPosts(){
-            const response = await fetch('https://fakestoreapi.com/products')
-            const products = await response.json()
-            setFilteredPosts(products)
-        }
-        getPosts()
-    },[])
+   
 
     return <div className="PostList">
         <h1 className="PostsTitle">Posts</h1>

@@ -1,5 +1,5 @@
 import { ReactNode } from "react"
-import "./MainFrame.css"
+import "./MainPage.css"
 
 
 interface IMainProps {
