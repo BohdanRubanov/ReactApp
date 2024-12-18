@@ -1,11 +1,11 @@
-import { PostList } from "./shared/PostList/PostList"
-import { MainFrame } from "./pages/MainPage/MainPage"
-import { Header } from "./pages/Header/Header"
+import { PostList } from "./PostList/PostList"
+import { MainFrame } from "../pages/MainPage/MainPage"
+import { Header } from "../pages/Header/Header"
 import "./App.css"
 import { BrowserRouter, Routes, Route } from "react-router-dom"
-import { Layout } from "./Layout/Layout"
-import { PostPage } from "./pages/PostPage/PostPage"
-import { NotFound } from "./shared/NotFound/NotFound"
+import { Layout } from "../Layout/Layout"
+import { PostPage } from "../pages/PostPage/PostPage"
+import { NotFound } from "../pages/NotFound/NotFound"
 export function App(){ 
   
 

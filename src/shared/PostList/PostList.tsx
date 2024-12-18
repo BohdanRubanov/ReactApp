@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { Post } from "../Post/Post"
+import { Post } from "./Post/Post"
 import "./PostList.css"
 import { usePosts } from "../../hooks/usePosts"
 
