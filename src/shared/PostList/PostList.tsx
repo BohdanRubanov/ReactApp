@@ -7,6 +7,7 @@ export function PostList(){
     const {posts} = usePosts()
     const [filteredPosts, setFilteredPosts] = useState(posts)
     const [selectedCategory, setSelectedCategory] = useState('All')
+    const {isLoading } = usePosts()
 
     useEffect(()=>{
         if(selectedCategory === 'All'){
@@ -22,6 +23,10 @@ export function PostList(){
    
 
     return <div className="PostList">
+
+        { isLoading === true ? (<div>Loading...</div>) :(
+
+            <>
         <h1 className="PostsTitle">Posts</h1>
         <select onChange={(event)=>{
             setSelectedCategory(event.target.value)
@@ -37,8 +42,10 @@ export function PostList(){
             {filteredPosts.map( (post) => {
     
                 
-                return <Post key = {post.id} id = {post.id} name = {post.name} description = {post.description} img = {post.image} author={post.author}></Post>
+                return <Post key = {post.id} id = {post.id} name = {post.name} description = {post.description} img = {post.social_image} author={post.author}></Post>
             }
             )}
+            </>
+        )}
     </div>
 }

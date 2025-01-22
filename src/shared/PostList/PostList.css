@@ -1,47 +1,79 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=K2D:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Mochiy+Pop+P+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
-.PostList{
-    background: url(../../../public/static/img/secondFrame.png);
-    background-size: cover;
+.PostList {
     display: flex;
-    font-family: "Poppins",sans-serif;
     flex-direction: column;
     align-items: center;
-    gap: 50px;
+    padding: 20px;
+    background-color: #f9fafc;
+    border-radius: 10px;
+    margin: 20px auto;
+    max-width: 800px;
 }
 
-.PostsTitle{
-    font-weight: 600;
-    font-size: 96px;
-    color: #44174E;
-}
 
-select {
-    width: 300px;
-    height: 70px;
-    padding: 10px;
-    font-size: 32px;
+.PostsTitle {
+    font-size: 64px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
     text-align: center;
-    background-color: #e57373; 
-    color: #fff; 
-    border: 2px solid #b71c1c;
+}
+
+.PostList select {
+    padding: 10px;
+    margin-bottom: 20px;
     border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 24px;
+    background-color: #fff;
     cursor: pointer;
-    outline: none;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-select:hover {
-    background-color: #ef5350;
+.PostList select:hover {
+    border-color: #888;
 }
 
 
-select:focus {
-    box-shadow: 0 0 10px rgba(239, 83, 80, 0.8);
+
+
+.Post {
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    padding: 15px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-option {
-    font-size: 14px;
-    background-color: #fff; 
-    color: #333; 
+
+
+
+.Post img {
+    width: 100%;
+    max-height: 500px;
+    object-fit: cover; 
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+
+
+
+.Post p {
+    font-size: 24px;
+    color: #555;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+
+
+
+
+.PostList div {
+    font-size: 24px;
+    color: #666;
+    margin: 20px;
 }

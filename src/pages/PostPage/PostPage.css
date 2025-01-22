@@ -1,7 +1,8 @@
 
 .onePost {
-    max-width: 800px;
-
+    max-width: 1200px;
+    align-items: center;
+    justify-content: center;
     padding: 20px;
     background-color: white;
     border: #000000 solid;

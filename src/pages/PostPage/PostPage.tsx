@@ -2,10 +2,11 @@ import { useEffect, useState } from "react";
 import ReactMarkdown from "react-markdown";
 import { useParams } from "react-router-dom";
 import "./PostPage.css"
+import { usePostById } from "../../hooks/usePostById";
 export function PostPage(){
     const params = useParams();
-    
-    const [post, setPost ] = useState(
+    const {post, isLoading } = usePostById(Number(params.id))
+    const [post_data, setPost ] = useState(
         {
         id: 0,
         title: "",
@@ -31,11 +32,21 @@ export function PostPage(){
             getPost()
         },[params.id])
     return(
+        
         <div className="onePost">
-      <h1>{post.title}</h1>
-      <img src={post.cover_image} alt="Cover" className="postImage" />
-      <p>{post.tags}</p>
-      <div className="postBody" dangerouslySetInnerHTML={{ __html: post.body_markdown }} />
+
+            { isLoading === true ? (<div>Loading...</div>) :(
+
+            <>
+            <h1>{post_data.title}</h1>
+            <img src={post_data.cover_image} alt="Cover" className="postImage" />
+            <p>{post_data.tags}</p>
+            <div className="postBody" dangerouslySetInnerHTML={{ __html: post_data.body_markdown }} />
+            
+            </>
+        )}
+
+
     </div>
     )
 }
