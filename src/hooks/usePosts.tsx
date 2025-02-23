@@ -2,11 +2,12 @@ import { useEffect, useState } from "react"
 
 export interface IPost{
     id: number,
-    name: string,
+    title: string,
     description: string,
     social_image: string,
     category: string,
-    author: string
+    author: string,
+    isLiked: boolean
 }
 
 export function usePosts(){

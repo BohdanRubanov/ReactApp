@@ -42,7 +42,7 @@ export function PostList(){
             {filteredPosts.map( (post) => {
     
                 
-                return <Post key = {post.id} id = {post.id} name = {post.name} description = {post.description} img = {post.social_image} author={post.author}></Post>
+                return <Post key = {post.id} id = {post.id} title = {post.title} description = {post.description} social_image = {post.social_image} author={post.author} isLiked={post.isLiked} category={post.category}></Post>
             }
             )}
             </>

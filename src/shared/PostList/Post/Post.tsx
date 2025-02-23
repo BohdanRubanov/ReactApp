@@ -2,15 +2,10 @@ import { useContext, useState } from "react"
 import "./Post.css"
 import { Link } from "react-router-dom";
 import { FavPosts } from "../../App";
+import { IPost } from "../../../hooks/usePosts";
 
-interface IPostProps {
-    id: number,
-    name: string,
-    description: string,
-    img: string,
-    author: string,
-}
-export function Post(props:IPostProps){
+
+export function Post(props:IPost){
     const [likes, setAmount] = useState(1)
     const [disableButton, setDisableButton] = useState(false);
     const [likeImg, setLikeImg] = useState("/static/img/likeBut.png")
@@ -21,10 +16,12 @@ export function Post(props:IPostProps){
         if (disableButton === false){
             setAmount(likes+1)
             addPostToFav(props)
+            props.isLiked = true
             setLikeImg("/static/img/pressedLikeBut.png")
             setDisableButton(true);
             console.log(favPosts)
         }
+        
     }
 
     function savePost(){
@@ -33,7 +30,7 @@ export function Post(props:IPostProps){
     return (
         <div className="Post">
             
-            <img src={props.img} alt="" />
+            <img src={props.social_image} alt="" />
             <div className="postInfo">
                 <div className="likeAndSaveBut">
                     <button onClick={incrementAmount} disabled={disableButton} className="likeBut"><img src={likeImg} alt="" /></button>
@@ -43,7 +40,7 @@ export function Post(props:IPostProps){
                 <p className="likesText">Likes: {likes}</p>
 
                 <Link to={"/post/"+props.id}>
-                <h1 className="nameText">{props.name}</h1>
+                <h1 className="nameText">{props.title}</h1>
                 <p className="descText">{props.description}</p> 
                 </Link>
             </div>

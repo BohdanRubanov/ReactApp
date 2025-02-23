@@ -7,36 +7,37 @@ import { PostPage } from "../pages/PostPage/PostPage";
 import { NotFound } from "../pages/NotFound/NotFound";
 import { Layout } from "./Layout/Layout";
 import "./App.css";
+import { IPost } from "../hooks/usePosts";
 
-interface IFavPost {
-    id: number,
-    name: string,
-    description: string,
-    img: string,
-    author: string,
-
-}
 
 const initialValue = {
-    favPosts: [] as IFavPost[],
-    addPostToFav: (post: IFavPost) => {},
+    favPosts: [] as IPost[],
+    addPostToFav: (post: IPost) => {},
+    delPostFromFav: (id: number) => {}
   }
 
 export const FavPosts = createContext(initialValue)
 
 export function App() {
-  const [favPosts, setFavPosts] = useState<IFavPost[]>([])
-  const addPostToFav = (post: IFavPost) => {
+  const [favPosts, setFavPosts] = useState<IPost[]>([])
+  const addPostToFav = (post: IPost) => {
     const posts = [...favPosts, post]
     setFavPosts(posts)
   }
+  function delPostFromFav(id: number) {
+    const filteredPosts = favPosts.filter((post)=>{
+        return post.id !== id
+        
+    })
+    setFavPosts(filteredPosts)}
+
 
 
 
 
 
   return (
-    <FavPosts.Provider value={{favPosts, addPostToFav}}>
+    <FavPosts.Provider value={{favPosts, addPostToFav, delPostFromFav}}>
       <BrowserRouter>
         <Header />
         <Routes>
