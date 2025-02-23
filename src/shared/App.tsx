@@ -5,9 +5,12 @@ import { MainFrame } from "../pages/MainPage/MainPage";
 import { Header } from "../pages/Header/Header";
 import { PostPage } from "../pages/PostPage/PostPage";
 import { NotFound } from "../pages/NotFound/NotFound";
+import { TagsPage } from "../pages/TagsPage/TagsPage";
 import { Layout } from "./Layout/Layout";
 import "./App.css";
 import { IPost } from "../hooks/usePosts";
+import { RegistrationPage } from "../pages/RegistrationPage/RegistrationPage";
+import { AuthorizationPage } from "../pages/AuthorizationPage/AuthorizationPage";
 
 
 const initialValue = {
@@ -44,6 +47,9 @@ export function App() {
           <Route path="/" element={<Layout />}>
             <Route path="/posts" element={<PostList />} />
             <Route path="/post/:id" element={<PostPage />} />
+            <Route path="/tags" element={<TagsPage />} />
+            <Route path="/registration" element={<RegistrationPage />} />
+            <Route path="/login" element={<AuthorizationPage />} />
           </Route>
           <Route path="*" element={<NotFound />} />
         </Routes>
