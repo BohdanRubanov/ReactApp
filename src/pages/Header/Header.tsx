@@ -7,6 +7,7 @@ export function Header(){
             <div className="blockLinks1">
                 <Link className='link' to={'/'}>Home</Link>
                 <Link className='link' to={'/posts'}>Posts</Link>
+                {/* тег a? А Link для чего? */}
                 <a className='link' href=''>Search</a>
             </div>
             <div className="blockLinks2">

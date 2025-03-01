@@ -32,6 +32,7 @@ export function PostList(){
             setSelectedCategory(event.target.value)
         }
         }>
+            {/* Должны использоватся Tags и приходить данные из хука useTags */}
             <option value = 'All'>All</option>
             <option value = 'funny'>funny</option>
             <option value = 'sad'>sad</option>

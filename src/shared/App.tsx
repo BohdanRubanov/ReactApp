@@ -12,7 +12,7 @@ import { IPost } from "../hooks/usePosts";
 import { RegistrationPage } from "../pages/RegistrationPage/RegistrationPage";
 import { AuthorizationPage } from "../pages/AuthorizationPage/AuthorizationPage";
 
-
+// контекст надо вынести в отдельный файл 
 const initialValue = {
     favPosts: [] as IPost[],
     addPostToFav: (post: IPost) => {},
@@ -23,6 +23,7 @@ export const FavPosts = createContext(initialValue)
 
 export function App() {
   const [favPosts, setFavPosts] = useState<IPost[]>([])
+    //   соблюдай один уровень табуляций, где то 4, где то 2
   const addPostToFav = (post: IPost) => {
     const posts = [...favPosts, post]
     setFavPosts(posts)
@@ -45,6 +46,7 @@ export function App() {
         <Header />
         <Routes>
           <Route path="/" element={<Layout />}>
+          {/* должен быть PostListPage */}
             <Route path="/posts" element={<PostList />} />
             <Route path="/post/:id" element={<PostPage />} />
             <Route path="/tags" element={<TagsPage />} />

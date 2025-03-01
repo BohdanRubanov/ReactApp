@@ -8,6 +8,8 @@ export function usePostById(id: number) {
     const [isLoading, setIsLoading] = useState(true)
 
     useEffect(() => {
+        // if в случае если id NaN должен быть
+        // try..catch()?
         async function getPost() {
             const response = await fetch(`https://dev.to/api/articles/${id}`)
             const post = await response.json()

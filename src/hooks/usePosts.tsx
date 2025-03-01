@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 
+// типизацию не поменял в соотвтсветии того что с бэка приходит
 export interface IPost{
     id: number,
     title: string,

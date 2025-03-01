@@ -10,6 +10,7 @@ export function AuthorizationPage() {
     });
     return (
         <div>
+            {/* onSubmit? */}
             <form>
                 <label>
                     Email:

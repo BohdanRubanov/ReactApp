@@ -14,6 +14,7 @@ export function PostPage(){
         tags: [],
         body_markdown: ""
         })
+    // должно быть вынесено в хук
     useEffect(()=>{
             async function getPost(){
                 try{
