@@ -1,12 +1,15 @@
 import { useEffect, useState } from "react"
+import { ITag } from "./useTags"
 
 export interface IPost{
     id: number,
-    title: string,
-    description: string,
-    social_image: string,
-    category: string,
+    name: string,
     author: string,
+    date: string,
+    comments: [],
+    userId: number,
+    tagId: number,
+    tag: ITag
     isLiked: boolean
 }
 
@@ -17,11 +20,22 @@ export function usePosts(){
 
     useEffect(()=>{
         async function getPosts(){
-            const response = await fetch('https://dev.to/api/articles/')
-            const posts = await response.json()
-            setPosts(posts)
-            setStatus(response.status)
-            setIsLoading(false)
+            try{
+                const response = await fetch('http://localhost:8000/posts/')
+                const result = await response.json()
+                if (result.status === "error"){
+                    console.log(result.message)
+                    return
+                }
+                setPosts(result.data)
+                setStatus(response.status)
+                setIsLoading(false)
+            }catch (err) {
+                console.log(err)
+            }
+            
+        
+            
         }
         getPosts()
         

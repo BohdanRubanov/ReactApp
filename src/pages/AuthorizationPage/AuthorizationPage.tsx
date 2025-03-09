@@ -1,13 +1,16 @@
 import { useForm } from "react-hook-form";
 
-interface IForm {
+interface ILoginForm {
     email: string;
     password: string;
 }
 export function AuthorizationPage() {
-    const { register, formState, clearErrors} = useForm<IForm>({
+    const { register, formState, clearErrors} = useForm<ILoginForm>({
         mode: 'onSubmit',
     });
+    function onSubmit(data: ILoginForm){
+        console.log(data)
+    }
     return (
         <div>
             <form>

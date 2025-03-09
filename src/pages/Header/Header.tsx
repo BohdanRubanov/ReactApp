@@ -7,10 +7,10 @@ export function Header(){
             <div className="blockLinks1">
                 <Link className='link' to={'/'}>Home</Link>
                 <Link className='link' to={'/posts'}>Posts</Link>
-                <a className='link' href=''>Search</a>
+                <Link className='link' to=''>Search</Link>
             </div>
             <div className="blockLinks2">
-                <a className='link' href=''>Profile</a>
+                <Link className='link' to=''>Profile</Link>
             </div>
 
             

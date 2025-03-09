@@ -1,11 +1,10 @@
 import { Outlet } from "react-router-dom";
 
-
-
-import { ReactNode, useContext } from "react";
+import { ReactNode} from "react";
 import { MainFrame } from "../../pages/MainPage/MainPage";
 import { Header } from "../../pages/Header/Header";
-import { FavPosts } from "../App";
+
+
 
 
 interface ILayoutProps {
@@ -13,7 +12,6 @@ interface ILayoutProps {
 }
 
 export function Layout(props: ILayoutProps){
-    const { favPosts, addPostToFav } = useContext(FavPosts)
     return (
         <div className="AllStyles">
             <div className="Header">
@@ -24,8 +22,7 @@ export function Layout(props: ILayoutProps){
                 <MainFrame>
                     <Outlet />
                 </MainFrame>
-                
-                {/* <PostList></PostList> */}
+
                 
             </div>
         </div>

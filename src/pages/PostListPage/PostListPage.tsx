@@ -1,5 +1,9 @@
+import { PostList } from "../../shared/PostList/PostList";
+
 export function PostListPage(){
     return (
-        <div></div>
+        <div>
+            <PostList />
+        </div>
     )
 }

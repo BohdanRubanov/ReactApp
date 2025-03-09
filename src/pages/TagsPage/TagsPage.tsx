@@ -2,8 +2,7 @@ import { useEffect, useState } from "react"
 import { useTags } from "../../hooks/useTags"
 
 export function TagsPage(){
-    const {tags} = useTags()
-    const {isLoading } = useTags()
+    const {tags, isLoading} = useTags()
 
     return <div className="TagsPage">
 

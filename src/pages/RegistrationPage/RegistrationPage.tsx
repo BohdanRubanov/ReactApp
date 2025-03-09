@@ -1,18 +1,21 @@
 import { useForm } from "react-hook-form";
 
-interface IForm {
+interface IRegForm {
     username: string;
 	email: string;
 	password: string;
 }
 export function RegistrationPage() {
-	const { register, formState, clearErrors} = useForm<IForm>({
+	const { register, formState, clearErrors, handleSubmit} = useForm<IRegForm>({
 		mode: 'onSubmit',
 	});
+	function onSubmit(data: IRegForm){
+        console.log(data)
+    }
 	
 	return (
 		<div>
-			<form>
+			<form onSubmit={handleSubmit(onSubmit)}>
 				<label>
 					Username:
 					<input
