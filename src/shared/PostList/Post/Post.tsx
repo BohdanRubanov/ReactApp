@@ -10,7 +10,7 @@ export function Post(props:IPost){
     const [disableButton, setDisableButton] = useState(false);
     const [likeImg, setLikeImg] = useState("/static/img/likeBut.png")
     const [saveImg, setSaveImg] = useState("/static/img/saveButton.png")
-    const { favPosts, addPostToFav } = useContext(FavPostsContext)
+    const { favPosts, addPostToFav, delPostFromFav } = useContext(FavPostsContext)
     function incrementAmount() {
 
         if (disableButton === false){
@@ -20,6 +20,12 @@ export function Post(props:IPost){
             setLikeImg("/static/img/pressedLikeBut.png")
             setDisableButton(true);
             console.log(favPosts)
+        }else{
+            delPostFromFav(props.id)
+            setAmount(likes-1)
+            props.isLiked = false
+            setLikeImg("/static/img/likeBut.png")
+            setDisableButton(false);
         }
         
     }
