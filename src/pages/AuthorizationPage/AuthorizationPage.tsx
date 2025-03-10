@@ -5,7 +5,7 @@ interface ILoginForm {
     password: string;
 }
 export function AuthorizationPage() {
-    const { register, formState, clearErrors} = useForm<ILoginForm>({
+    const { register, formState, clearErrors, handleSubmit} = useForm<ILoginForm>({
         mode: 'onSubmit',
     });
     function onSubmit(data: ILoginForm){
@@ -13,7 +13,7 @@ export function AuthorizationPage() {
     }
     return (
         <div>
-            <form>
+            <form onSubmit={handleSubmit(onSubmit)}>
                 <label>
                     Email:
                     <input

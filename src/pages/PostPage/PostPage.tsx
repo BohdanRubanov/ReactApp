@@ -1,5 +1,3 @@
-import { useEffect, useState } from "react";
-import ReactMarkdown from "react-markdown";
 import { useParams } from "react-router-dom";
 import "./PostPage.css"
 import { usePostById } from "../../hooks/usePostById";

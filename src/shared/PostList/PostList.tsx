@@ -16,7 +16,8 @@ export function PostList(){
             setFilteredPosts(posts)
         } else{
             setFilteredPosts(posts.filter( (post)=>{
-                return post.tag.name === selectedCategory
+                console.log(post.tags.name)
+                return post.tags.name === selectedCategory
             }))
         }
         console.log(selectedCategory)
@@ -43,7 +44,7 @@ export function PostList(){
             {filteredPosts.map( (post) => {
     
                 
-                return <Post key = {post.id} id = {post.id} name = {post.name} author={post.author} isLiked={post.isLiked} date={post.date} comments={post.comments} userId={post.userId} tagId={post.tagId} tag={post.tag}></Post>
+                return <Post key = {post.id} id = {post.id} name = {post.name} author={post.author} date={post.date} comments={post.comments} userId={post.userId} tagId={post.tagId} tags={post.tags}></Post>
             }
             )}
             </>

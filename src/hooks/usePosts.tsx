@@ -9,8 +9,7 @@ export interface IPost{
     comments: [],
     userId: number,
     tagId: number,
-    tag: ITag
-    isLiked: boolean
+    tags: ITag
 }
 
 export function usePosts(){

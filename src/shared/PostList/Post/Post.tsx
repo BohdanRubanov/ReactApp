@@ -16,14 +16,12 @@ export function Post(props:IPost){
         if (disableButton === false){
             setAmount(likes+1)
             addPostToFav(props)
-            props.isLiked = true
             setLikeImg("/static/img/pressedLikeBut.png")
             setDisableButton(true);
             console.log(favPosts)
         }else{
             delPostFromFav(props.id)
             setAmount(likes-1)
-            props.isLiked = false
             setLikeImg("/static/img/likeBut.png")
             setDisableButton(false);
         }
@@ -39,7 +37,7 @@ export function Post(props:IPost){
 
             <div className="postInfo">
                 <div className="likeAndSaveBut">
-                    <button onClick={incrementAmount} disabled={disableButton} className="likeBut"><img src={likeImg} alt="" /></button>
+                    <button onClick={incrementAmount} className="likeBut"><img src={likeImg} alt="" /></button>
                     <button onClick={savePost} className="saveBut"><img src={saveImg} alt="" /></button>
                 </div>
                 

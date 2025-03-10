@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react"
 import { useTags } from "../../hooks/useTags"
 
 export function TagsPage(){
