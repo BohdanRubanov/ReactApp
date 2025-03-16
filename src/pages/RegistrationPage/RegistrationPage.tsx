@@ -1,4 +1,5 @@
 import { useForm } from "react-hook-form";
+import { useUserContext } from "../../context/userContext";
 
 interface IRegForm {
     username: string;
@@ -6,11 +7,12 @@ interface IRegForm {
 	password: string;
 }
 export function RegistrationPage() {
+	const {register: userRegister} = useUserContext()
 	const { register, formState, clearErrors, handleSubmit} = useForm<IRegForm>({
-		mode: 'onSubmit',
+		mode: 'onSubmit'
 	});
 	function onSubmit(data: IRegForm){
-        console.log(data)
+        userRegister(data.username, data.email, data.password)
     }
 	
 	return (

@@ -8,6 +8,7 @@ import { AuthorizationPage } from "../pages/AuthorizationPage/AuthorizationPage"
 import { PostListPage } from "../pages/PostListPage/PostListPage";
 import { Layout } from "../shared/Layout/Layout";
 import { FavPostsPage } from "../pages/FavPostsPage/FavPostPage";
+import { ProfilePage } from "../pages/profilePage/profilePage";
 
 
 
@@ -24,6 +25,7 @@ export function AppRoutes() {
             <Route path="/registration" element={<RegistrationPage />} />
             <Route path="/login" element={<AuthorizationPage />} />
             <Route path="/favPosts" element={<FavPostsPage />} />
+            <Route path="/me" element={<ProfilePage />} />
           </Route>
           <Route path="*" element={<NotFound />} />
         </Routes>

@@ -1,15 +1,17 @@
 import { useForm } from "react-hook-form";
+import { useUserContext } from "../../context/userContext";
 
 interface ILoginForm {
     email: string;
     password: string;
 }
 export function AuthorizationPage() {
+    const {login} = useUserContext()
     const { register, formState, clearErrors, handleSubmit} = useForm<ILoginForm>({
-        mode: 'onSubmit',
+        mode: 'onSubmit'
     });
     function onSubmit(data: ILoginForm){
-        console.log(data)
+        login(data.email, data.password)
     }
     return (
         <div>
